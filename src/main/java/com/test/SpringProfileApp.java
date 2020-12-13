@@ -22,13 +22,9 @@ public class SpringProfileApp {
 
         @GetMapping("/")
         public String helloSpringProfile() {
-            String s1 = env.getProperty("app.message");
-            String s2 = env.getProperty("app.message");
 
-            System.out.println("----->" + s1);
-            System.out.println("----->" + s2);
-
-            return env.getProperty("app.message");
+            return env.getProperty("app.message") + env.getProperty("datasource.driverClassName") + env.getProperty("datasource.url")+
+                    env.getProperty("datasource.userName") + env.getProperty("datasource.password") ;
         }
     }
 
