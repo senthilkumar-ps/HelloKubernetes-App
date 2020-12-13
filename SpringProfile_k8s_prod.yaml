@@ -17,7 +17,7 @@ spec:
       containers:
       - name: springprofile-prod
         image: psmsenthilkumar/springprofile-prod
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: IfNotPresent 
         ports:
           - name: http
             containerPort: 8082 # The port that the container exposes
