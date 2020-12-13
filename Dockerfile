@@ -34,7 +34,7 @@ COPY --from=builder /app/target/Springbootprofiles-*.jar /springprofile.jar
 
 # Run the web service on container startup
 # Docker Dev Image
-#ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom","-Dspring.profiles.active=dev","-jar","springprofile.jar"]
+# ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom","-Dspring.profiles.active=dev","-jar","springprofile.jar"]
 
 # Docker Prod Image
 ENTRYPOINT ["java", "-Djava.security.egd=file:/prod/./urandom","-Dspring.profiles.active=prod","-jar","springprofile.jar"]
