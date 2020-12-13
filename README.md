@@ -40,11 +40,13 @@ Next we will add profile configuration in pom.xml
 Maven compile & run example:
 ----------------------------
 mvn clean package -P dev
+
 mvn spring-boot:run -P prod
 
 We need to implement the maven profiling on spring boot:
 ---------------------------------------------------------
 mvn spring-boot:run -P dev
+
 mvn spring-boot:run -P prod
 
 Deploy App in Docker And Kubernetes:
