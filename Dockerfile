@@ -32,7 +32,7 @@ FROM adoptopenjdk/openjdk8:jdk8u202-b08-alpine-slim
 # Copy the jar to the production image from the builder stage.
 COPY --from=builder /app/target/Springbootprofiles-*.jar /springprofile.jar
 
-# Run the web service on container startup.
+# Run the web service on container startup
 # Docker Dev Image
 #ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom","-Dspring.profiles.active=dev","-jar","springprofile.jar"]
 
