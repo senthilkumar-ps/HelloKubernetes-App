@@ -29,4 +29,4 @@ FROM adoptopenjdk/openjdk8:jdk8u202-b08-alpine-slim
 COPY --from=builder /app/target/Springbootprofiles-*.jar /springprofile.jar
 
 # Run the web service on container startup.
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-Dspring.profiles.active=dev","-Dspring.profiles.active=prod","-jar","/springprofile.jar"]
+ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom","-Dspring.profiles.active=dev","-Dspring.profiles.active=prod","-jar","springprofile.jar"]
