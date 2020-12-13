@@ -1,7 +1,7 @@
 apiVersion: apps/v1           # API version
 kind: Deployment              # Type of kubernetes resource
 metadata:
-  name: springprofile-dev    # Name of the kubernetes resource
+  name: springprofile-dev     # Name of the kubernetes resource
   labels:                     # Labels that will be applied to this resource
     app: springprofile-dev
 spec:
@@ -25,13 +25,13 @@ spec:
 apiVersion: v1                # API version
 kind: Service                 # Type of the kubernetes resource
 metadata:                     
-  name: springprofile-dev    # Name of the kubernetes resource
+  name: springprofile-dev     # Name of the kubernetes resource
   labels:                     # Labels that will be applied to this resource
     app: springprofile-dev
 spec:                         
   type: LoadBalancer          # The service will be exposed by opening a Port on each node and proxying it. 
   selector:
-    app: springprofile-dev   # The service exposes Pods with label `app=polling-app-server`
+    app: springprofile-dev    # The service exposes Pods with label `app=polling-app-server`
   ports:                      # Forward incoming connections on port 8080 to the target port 8080
   - name: http
     port: 8081
