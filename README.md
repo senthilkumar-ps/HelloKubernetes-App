@@ -41,7 +41,7 @@ Maven compile & run example:
 ----------------------------
 mvn clean package -P dev
 
-mvn spring-boot:run -P prod
+mvn clean package -P prod
 
 We need to implement the maven profiling on spring boot:
 ---------------------------------------------------------
