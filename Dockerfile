@@ -10,10 +10,10 @@ VOLUME /tmp
 
 # Make port 8081/8082 available to the world outside this container
 # For Profile Dev Image
-EXPOSE 8081
+#EXPOSE 8081
 
 # For Profile Prod Image
-# EXPOSE 8082
+EXPOSE 8082
 
 # Copy local code to the container image.
 WORKDIR /app
@@ -34,7 +34,7 @@ COPY --from=builder /app/target/Springbootprofiles-*.jar /springprofile.jar
 
 # Run the web service on container startup.
 # Docker Dev Image
-ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom","-Dspring.profiles.active=dev","-jar","springprofile.jar"]
+#ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom","-Dspring.profiles.active=dev","-jar","springprofile.jar"]
 
 # Docker Prod Image
-# ENTRYPOINT ["java", "-Djava.security.egd=file:/prod/./urandom","-Dspring.profiles.active=prod","-jar","springprofile.jar"]
+ENTRYPOINT ["java", "-Djava.security.egd=file:/prod/./urandom","-Dspring.profiles.active=prod","-jar","springprofile.jar"]
