@@ -8,7 +8,7 @@ MAINTAINER SenthilKumar <psm.senthilkumar@gmail.com>
 # Add a volume pointing to /tmp
 VOLUME /tmp
 
-# Copy local code to the container image.
+# Copy local code to the container image
 WORKDIR /app
 COPY pom.xml .
 COPY src ./src
