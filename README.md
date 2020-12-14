@@ -37,14 +37,12 @@ Next we will add profile configuration in pom.xml
         </profile>
     </profiles>\
     
-Maven compile & run example:
-----------------------------
+Maven compile & run App Locally (Eclipse):
+------------------------------------------
 mvn clean package -P dev
 
 mvn clean package -P prod
 
-We need to implement the maven profiling on spring boot:
----------------------------------------------------------
 mvn spring-boot:run -P dev
 
 mvn spring-boot:run -P prod
