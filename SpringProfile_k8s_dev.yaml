@@ -16,9 +16,11 @@ spec:
     spec:                     # Spec for the containers that will be run in the Pods
       containers:
       - name: springprofile-dev
-        value: "-Dspring.profiles.active=dev"
         image: psmsenthilkumar/springprofile
         imagePullPolicy: IfNotPresent
+        env:
+        - name: JAVA_OPTIONS
+          value: "-Dspring.profiles.active=${ENVIRONMENT}"
         ports:
           - name: http
             containerPort: 8081 # The port that the container exposes         
