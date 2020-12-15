@@ -15,13 +15,15 @@ spec:
         app: springprofile-dev
     spec:                     # Spec for the containers that will be run in the Pods
       containers:
-      - name: JAVA_OPTIONS
-        value: "-Dspring.profiles.active=dev"
+      - name: springprofile-dev
         image: psmsenthilkumar/springprofile
         imagePullPolicy: IfNotPresent
         ports:
           - name: http
             containerPort: 8081 # The port that the container exposes
+      - env:
+        - name: JAVA_OPTIONS
+          value: "-Dspring.profiles.active=dev"
 ---
 apiVersion: v1                # API version
 kind: Service                 # Type of the kubernetes resource
