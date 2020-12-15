@@ -5,11 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: 792429589635.dkr.ecr.ap-south-1.amazonaws.com/gitfocus
-  # tag: latest
+  repository: psmsenthilkumar/springprofile
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  # tag: "latest"
 
 imagePullSecrets: []
 nameOverride: ""
