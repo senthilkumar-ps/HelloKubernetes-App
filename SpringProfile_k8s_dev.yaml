@@ -19,7 +19,7 @@ spec:
         - name: JAVA_OPTIONS
           value: "-Dspring.profiles.active=dev"
       - name: springprofile-dev
-        image: psmsenthilkumar/springprofile-dev
+        image: psmsenthilkumar/springprofile
         imagePullPolicy: IfNotPresent
         ports:
           - name: http
