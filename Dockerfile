@@ -25,4 +25,6 @@ FROM adoptopenjdk/openjdk8:jdk8u202-b08-alpine-slim
 # Copy the jar to the production image from the builder stage.
 COPY --from=builder /app/target/Springbootprofiles-*.jar /springprofile.jar
 
-ENTRYPOINT ["java", "-jar","springprofile.jar"]
+ENTRYPOINT ["java", "-jar","/springprofile.jar"]
+
+# ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom","-Dspring.profiles.active=dev","-jar","/springprofile.jar"]
