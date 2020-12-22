@@ -12,6 +12,8 @@ VOLUME /tmp
 WORKDIR /app
 COPY pom.xml .
 COPY src ./src
+RUN pwd
+RUN ls -l
 
 # Build a release artifact.
 RUN mvn package -DskipTests
