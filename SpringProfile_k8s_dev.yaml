@@ -16,8 +16,8 @@ spec:
     spec:                     # Spec for the containers that will be run in the Pods
       containers:
       - name: springprofile-dev
-        image: psmsenthilkumar/springprofile
-        imagePullPolicy: IfNotPresent
+        image: psmsenthilkumar/priyanka
+        imagePullPolicy: Always
         env:
         - name: JAVA_OPTIONS
           value: "-Dspring.profiles.active=dev"
