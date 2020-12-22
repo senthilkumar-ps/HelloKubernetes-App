@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: psmsenthilkumar/springprofile
+  repository: psmsenthilkumar/priyanka
   tag: latest
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
