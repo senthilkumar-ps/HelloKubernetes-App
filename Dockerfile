@@ -8,10 +8,14 @@ MAINTAINER SenthilKumar <psm.senthilkumar@gmail.com>
 # Add a volume pointing to /tmp
 VOLUME /tmp
 
+RUN mkdir -p /app /app/appconfig 
+
 # Copy local code to the container image
+COPY pom.xml /app
+COPY src /app
+COPY src/main/resources/ /app/appconfig/
 WORKDIR /app
-COPY pom.xml .
-COPY src ./src
+
 RUN pwd
 RUN ls -l
 
@@ -26,6 +30,7 @@ FROM adoptopenjdk/openjdk8:jdk8u202-b08-alpine-slim
 
 # Copy the jar to the production image from the builder stage.
 COPY --from=builder /app/target/Springbootprofiles-*.jar /springprofile.jar
+
 
 ENTRYPOINT ["java", "-jar","/springprofile.jar"]
 
