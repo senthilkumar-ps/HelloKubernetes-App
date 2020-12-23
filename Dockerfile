@@ -12,12 +12,16 @@ RUN mkdir -p /app /app/appconfig
 
 # Copy local code to the container image
 COPY pom.xml /app
-COPY src /app/
+COPY src /app/src 
 COPY src/main/resources/ /app/appconfig/
+
+
+
 WORKDIR /app
 
 RUN pwd
 RUN ls -l
+
 
 # Build a release artifact.
 RUN mvn package -DskipTests
