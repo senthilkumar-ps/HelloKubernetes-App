@@ -12,7 +12,7 @@ RUN mkdir -p /app /app/appconfig
 
 # Copy local code to the container image
 COPY pom.xml /app
-COPY src /app
+COPY src /app/
 COPY src/main/resources/ /app/appconfig/
 WORKDIR /app
 
