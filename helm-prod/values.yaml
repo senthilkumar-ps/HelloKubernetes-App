@@ -39,7 +39,7 @@ securityContext: {}
 
 service:
   type: LoadBalancer
-  port: 8082
+  port: 7072
 
 ingress:
   enabled: false

@@ -38,7 +38,7 @@ spec:
             value: "-Dspring.profiles.active=prod"
           ports:
             - name: http
-              containerPort: 8082
+              containerPort: 7072
               protocol: TCP
           livenessProbe:
             httpGet:
