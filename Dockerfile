@@ -35,8 +35,8 @@ ENV MAIN_OPTS ''
 # Copy the jar to the production image from the builder stage.
 COPY --from=builder /app/target/Springbootprofiles-*.jar /springprofile.jar
 
-ENTRYPOINT java $JAVA_OPTS -jar ./springprofile.jar $MAIN_OPTS
+# ENTRYPOINT java $JAVA_OPTS -jar ./springprofile.jar $MAIN_OPTS
 
-#ENTRYPOINT ["java", "-jar","/springprofile.jar"]
+ENTRYPOINT ["java", "-jar","/springprofile.jar"]
 
 # ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom","-Dspring.profiles.active=dev","-jar","/springprofile.jar"]
