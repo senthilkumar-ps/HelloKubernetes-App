@@ -17,7 +17,7 @@ public class SpringProfileApp {
     @Autowired
     private Environment env;
 
-    @RestController
+    @RestController 
     class HelloworldController {
 
         @GetMapping("/")
