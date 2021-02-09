@@ -7,7 +7,7 @@ spec:
   containers:
   - name: kube-log-container
     image: psmsenthilkumar/kube-log
-    args: ["-file", "/var/log/kube-log-app/kube-log-app.log"]
+    args: ["-file", "/var/log/kube-log-container/kube-log-app.log"]
     volumeMounts:
     - name: kube-log-app-log-dir
       mountPath: /var/log/kube-log-container
