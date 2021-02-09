@@ -21,7 +21,7 @@ spec:
             volumes:
               - name: kube-log-app-log-dir
                 hostPath:
-                  path: /var/lib/docker/containers
+                  path: /home/ec2-user
     replicas: 1
     selector:
         matchLabels:
