@@ -14,6 +14,10 @@ public class ScheduledLog {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ScheduledLog.class);
 	@Scheduled(fixedRate = 1000)
 	public void reportCurrentTime() {
-		LOGGER.info("The time now is {}", LocalDateTime.now());
+
+		System.out.println("Sysout Msg" + "The time now is {}" + LocalDateTime.now());
+		
+		LOGGER.info("Logger Msg" +"The time now is {}", LocalDateTime.now());
+
 	}
 }

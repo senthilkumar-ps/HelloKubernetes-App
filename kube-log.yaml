@@ -13,24 +13,14 @@ spec:
             containers:
             - name: kube-log-container
               image: psmsenthilkumar/kube-log
-              args: ["-file", "/var/log/logging-app/logging-app.log"]
-              volumeMounts:
-              - name: logging-app-log-dir
-                mountPath: /var/log/logging-app
-            volumes:
-            - name: logging-app-log-dir
-              hostPath:
-                path: /var/log/containers
               ports:
-              - containerPort: 5051
+              - containerPort: 8888
     replicas: 2
     selector:
         matchLabels:
             app: kube-log
             tier: backend
-            
----         
-   
+---
 apiVersion: v1
 kind: Service
 metadata:
