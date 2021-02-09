@@ -15,7 +15,7 @@ spec:
               image: psmsenthilkumar/kube-log
               ports:
               - containerPort: 8888
-    replicas: 2
+    replicas: 1
     selector:
         matchLabels:
             app: kube-log
