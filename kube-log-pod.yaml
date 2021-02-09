@@ -14,4 +14,4 @@ spec:
   volumes:
   - name: kube-log-app-log-dir
     hostPath:
-      path: /home/ubuntu/logs
+      path: /home/ec2-user/logs
