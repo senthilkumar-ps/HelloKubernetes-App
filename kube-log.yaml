@@ -13,8 +13,15 @@ spec:
             containers:
             - name: kube-log-container
               image: psmsenthilkumar/kube-log
+              volumeMounts:
+                - name: kube-log-app-log-dir
+                  mountPath: /var/log/kube-log-container
               ports:
-              - containerPort: 8888
+              - containerPort: 5051
+              volumes:
+            - name: kube-log-app-log-dir
+              hostPath:
+                path: /home/ec2-user/logs
     replicas: 1
     selector:
         matchLabels:
