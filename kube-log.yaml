@@ -20,7 +20,7 @@ spec:
               - containerPort: 5051
             volumes:
               - name: kube-log-app-log-dir
-                hostPath:
+                hostPath: 
                   path: /home/ec2-user
     replicas: 1
     selector:
