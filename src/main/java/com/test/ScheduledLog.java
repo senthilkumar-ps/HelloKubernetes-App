@@ -16,9 +16,11 @@ public class ScheduledLog {
 	@Scheduled(fixedRate = 1000)
 	public void reportCurrentTime() {
 
-		System.out.println("Sysout Msg" + "The time now is {}" + LocalDateTime.now());
-
-		logger.info("Logger Msg" +"The time now is {}", LocalDateTime.now());
-
+		/*
+		 * System.out.println("Sysout Msg" + "The time now is {}" +
+		 * LocalDateTime.now());
+		 * 
+		 * logger.info("Logger Msg" +"The time now is {}", LocalDateTime.now());
+		 */
 	}
 }

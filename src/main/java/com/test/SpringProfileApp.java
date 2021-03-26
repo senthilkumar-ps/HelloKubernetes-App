@@ -16,18 +16,15 @@ public class SpringProfileApp {
 
 
 
-	@Autowired
-	private Environment env;
-
-	@RestController 
-	class HelloworldController {
-
-		@GetMapping("/")
-		public String helloSpringProfile() {
-
-			return env.getProperty("app.message");
-		}
-	}
+	/*
+	 * @Autowired private Environment env;
+	 * 
+	 * @RestController class HelloworldController {
+	 * 
+	 * @GetMapping("/") public String helloSpringProfile() {
+	 * 
+	 * return env.getProperty("app.message"); } }
+	 */
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringProfileApp.class, args);
