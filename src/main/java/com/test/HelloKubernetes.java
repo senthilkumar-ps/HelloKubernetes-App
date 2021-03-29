@@ -10,5 +10,4 @@ public class HelloKubernetes {
 	public String index() {
 		return "Hello Kubernetes..!";
 	}
-
 }

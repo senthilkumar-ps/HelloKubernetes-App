@@ -15,13 +15,10 @@ COPY pom.xml /app
 COPY src /app/src 
 COPY src/main/resources/ /app/appconfig/
 
-
-
 WORKDIR /app
 
 RUN pwd
 RUN ls -l
-
 
 # Build a release artifact.
 RUN mvn package -DskipTests
@@ -33,10 +30,8 @@ RUN mvn package -DskipTests
 FROM adoptopenjdk/openjdk8:jdk8u202-b08-alpine-slim
 ENV MAIN_OPTS '' 
 # Copy the jar to the production image from the builder stage.
-COPY --from=builder /app/target/Springbootprofiles-*.jar /springprofile.jar
+ENTRYPOINT ["java", "-jar","/hellok8s.jar"]
+
 
 # ENTRYPOINT java $JAVA_OPTS -jar ./springprofile.jar $MAIN_OPTS
-
-ENTRYPOINT ["java", "-jar","/springprofile.jar"]
-
 # ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom","-Dspring.profiles.active=dev","-jar","/springprofile.jar"]
