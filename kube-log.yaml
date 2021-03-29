@@ -1,43 +1,36 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-    name: kube-log-deployment
+    name: k8s-deployment
 spec:
     template:
         metadata:
-            name: kube-log
+            name: k8s
             labels:
-                app: kube-log
+                app: k8s
                 tier: backend
         spec:
             containers:
-            - name: kube-log-container
-              image: psmsenthilkumar/kube-log
-              volumeMounts:
-                - name: kube-log-app-log-dir
-                  mountPath: /var/log/kube-log-container
+            - name: k8s-container
+              image: ************
               ports:
-              - containerPort: 5051
-            volumes:
-              - name: kube-log-app-log-dir
-                hostPath: 
-                  path: /home/ec2-user
-    replicas: 1
+              - containerPort: 8888
+    replicas: 2
     selector:
         matchLabels:
-            app: kube-log
+            app: k8s
             tier: backend
----
 apiVersion: v1
+---
 kind: Service
 metadata:
-    name: kube-log-service-backend
+    name: k8s-service-backend
 spec:
     type: LoadBalancer
     ports:
-        - targetPort: 5051
-          port: 5051
+        - targetPort: 8888
+          port: 8888
     selector:
-        app: kube-log
+        app: k8s
         tier: backend
             
