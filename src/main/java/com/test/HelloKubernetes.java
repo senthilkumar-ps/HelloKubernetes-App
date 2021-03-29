@@ -8,7 +8,7 @@ public class HelloKubernetes {
 
 	@RequestMapping("/")
 	public String index() {
-		return "Hello Kuberntes..!";
+		return "Hello Kubernetes..!";
 	}
 
 }
