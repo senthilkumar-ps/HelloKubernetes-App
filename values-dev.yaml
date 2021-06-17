@@ -38,8 +38,8 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: NodePort
-  port: 4042
+  type: LoadBalancer
+  port: 5677
 ingress:
   enabled: false
   annotations: {}
