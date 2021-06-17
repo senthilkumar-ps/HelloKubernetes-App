@@ -60,7 +60,7 @@
 
 	</dependencies>
 
-	<profiles>
+<!-- 	<profiles>
 		<profile>
 			<id>dev</id>
 			<properties>
@@ -75,9 +75,9 @@
 			<properties>
 				<activatedProperties>prod</activatedProperties>
 			</properties>
-			<!-- activation> <activeByDefault>true</activeByDefault> </activation> -->
+			activation> <activeByDefault>true</activeByDefault> </activation>
 		</profile>
-	</profiles>
+	</profiles> -->
 
 	<build>
 		<plugins>
