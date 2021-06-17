@@ -10,7 +10,7 @@ image:
   tag: latest
   pullPolicy: Always
 java_opt_key: "--spring.profiles.active"
-java_opt_value: "prod"
+java_opt_value: "dev"
   # Overrides the image tag whose default is the chart appVersion.
 imagePullSecrets: []
 nameOverride: ""
