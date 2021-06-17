@@ -6,9 +6,11 @@ replicaCount: 1
 appName: gitfocus
 
 image:
-  repository: xxxxxxxxxxxxxxxxxxxxxxxxx
-  tag: latest
+  repository: psmsenthilkumar/springprofile
+  tag: 11
   pullPolicy: Always
+java_opt_key: "--spring.profiles.active"
+java_opt_value: "prod"
   # Overrides the image tag whose default is the chart appVersion.
 imagePullSecrets: []
 nameOverride: ""
@@ -36,9 +38,8 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: LoadBalancer
-  port: 4041
-
+  type: NodePort
+  port: 4042
 ingress:
   enabled: false
   annotations: {}
