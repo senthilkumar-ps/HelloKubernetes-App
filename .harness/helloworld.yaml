@@ -49,13 +49,23 @@ pipeline:
                         spec:
                             connectorRef: helloworlddocker
                             image: helloworld
+                      - identifier: dependency
+                        name: dependency
+                        type: Service
+                        spec:
+                            connectorRef: helloworlddocker
+                            image: helloworld
                   infrastructure:
                       type: KubernetesDirect
                       spec:
                           connectorRef: harnesscluster
                           namespace: helloworld
-                  sharedPaths:
-                      - ""
-              variables: []
               when:
                   pipelineStatus: All
+              variables: []
+    properties:
+        ci:
+            codebase:
+                connectorRef: helloworld
+                repoName: "HelloKubernetes-App "
+                build: <+input>
