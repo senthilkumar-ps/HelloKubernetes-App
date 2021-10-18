@@ -23,9 +23,39 @@ pipeline:
                                     image: <+input>
                                     command: echo "hello world"
                                     privileged: false
-                  serviceDependencies: []
+                          - step:
+                                type: BuildAndPushDockerRegistry
+                                name: helloworld-registry
+                                identifier: helloworldregistry
+                                spec:
+                                    connectorRef: helloworlddocker
+                                    repo: helloworld
+                                    tags:
+                                        - latest
+                                    optimize: true
+                          - step:
+                                type: Run
+                                name: dockerbuild
+                                identifier: dockerbuild
+                                spec:
+                                    connectorRef: helloworlddocker
+                                    image: helloworld
+                                    command: docker -D run hello-world
+                                    privileged: false
+                  serviceDependencies:
+                      - identifier: helloworlddependency
+                        name: helloworld-dependency
+                        type: Service
+                        spec:
+                            connectorRef: helloworlddocker
+                            image: helloworld
                   infrastructure:
                       type: KubernetesDirect
                       spec:
-                          connectorRef: <+input>
+                          connectorRef: harnesscluster
                           namespace: default
+                  sharedPaths:
+                      - ""
+              variables: []
+              when:
+                  pipelineStatus: All
