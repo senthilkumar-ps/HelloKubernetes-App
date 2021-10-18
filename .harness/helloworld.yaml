@@ -8,10 +8,10 @@ pipeline:
         - stage:
               name: helloworld
               identifier: helloworld
-              description: helloworld
+              description: ""
               type: CI
               spec:
-                  cloneCodebase: true
+                  cloneCodebase: false
                   execution:
                       steps:
                           - step:
@@ -23,48 +23,9 @@ pipeline:
                                     image: <+input>
                                     command: echo "hello world"
                                     privileged: false
-                          - step:
-                                type: BuildAndPushDockerRegistry
-                                name: helloworld-registry
-                                identifier: helloworldregistry
-                                spec:
-                                    connectorRef: helloworlddocker
-                                    repo: karthequian/helloworld
-                                    tags:
-                                        - latest
-                                    optimize: true
-                          - step:
-                                type: Run
-                                name: dockerbuild
-                                identifier: dockerbuild
-                                spec:
-                                    connectorRef: helloworlddocker
-                                    image: helloworld
-                                    command: docker -D run hello-world
-                                    privileged: false
-                  serviceDependencies:
-                      - identifier: helloworlddependency
-                        name: helloworld-dependency
-                        type: Service
-                        spec:
-                            connectorRef: helloworlddocker
-                            image: helloworld
-                      - identifier: dependency
-                        name: dependency
-                        type: Service
-                        spec:
-                            connectorRef: helloworlddocker
-                            image: helloworld
+                  serviceDependencies: []
                   infrastructure:
                       type: KubernetesDirect
                       spec:
-                          connectorRef: harnesscluster
-                          namespace: helloworld
-              when:
-                  pipelineStatus: All
-    properties:
-        ci:
-            codebase:
-                connectorRef: helloworld
-                repoName: "HelloKubernetes-App "
-                build: <+input>
+                          connectorRef: <+input>
+                          namespace: default
