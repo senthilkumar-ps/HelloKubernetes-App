@@ -11,7 +11,7 @@ pipeline:
               description: helloworld
               type: CI
               spec:
-                  cloneCodebase: false
+                  cloneCodebase: true
                   execution:
                       steps:
                           - step:
@@ -62,7 +62,6 @@ pipeline:
                           namespace: helloworld
               when:
                   pipelineStatus: All
-              variables: []
     properties:
         ci:
             codebase:
