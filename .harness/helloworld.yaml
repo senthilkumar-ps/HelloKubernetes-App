@@ -19,9 +19,9 @@ pipeline:
                                 name: helloworld
                                 identifier: helloworld
                                 spec:
-                                    connectorRef: <+input>
-                                    image: <+input>
-                                    command: echo "hello world"
+                                    connectorRef: helloworlddocker
+                                    image: helloworld
+                                    command: "FROM alpine\r\nRUN echo \"hello\""
                                     privileged: false
                   serviceDependencies: []
                   infrastructure:
