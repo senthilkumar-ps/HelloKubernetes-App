@@ -1,0 +1,19 @@
+connector:
+  name: harness-cluster
+  identifier: harnesscluster
+  description:
+  orgIdentifier: default
+  projectIdentifier: helloworld
+  type: K8sCluster
+  spec:
+    credential:
+      type: ManualConfig
+      spec:
+        masterUrl: https://E0559AFADF9812FB40B06B60EB6862AF.gr7.us-west-2.eks.amazonaws.com
+        auth:
+          type: UsernamePassword
+          spec:
+            username: helloworld
+            passwordRef: helloworld
+    delegateSelectors:
+    - hekkoworld
