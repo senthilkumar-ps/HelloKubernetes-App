@@ -6,7 +6,7 @@ connector:
   projectIdentifier: helloworld
   type: DockerRegistry
   spec:
-    dockerRegistryUrl: https://hub.docker.com/u/nagisetty1998
+    dockerRegistryUrl: https://registry.hub.docker.com/v2/
     providerType: DockerHub
     auth:
       type: UsernamePassword
