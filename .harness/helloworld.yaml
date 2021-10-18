@@ -8,10 +8,10 @@ pipeline:
         - stage:
               name: helloworld
               identifier: helloworld
-              description: ""
+              description: helloworld
               type: CI
               spec:
-                  cloneCodebase: false
+                  cloneCodebase: true
                   execution:
                       steps:
                           - step:
