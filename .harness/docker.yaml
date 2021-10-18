@@ -1,0 +1,24 @@
+inputSet:
+  identifier: "docker"
+  pipeline:
+    identifier: "helloworld"
+    stages:
+    - stage:
+        identifier: "helloworld"
+        type: "CI"
+        spec:
+          execution:
+            steps:
+            - step:
+                identifier: "example"
+                type: "Run"
+                spec:
+                  connectorRef: "helloworlddocker"
+                  image: "helloworld:latest"
+          infrastructure:
+            type: "KubernetesDirect"
+            spec:
+              connectorRef: ""
+  name: "docker"
+  orgIdentifier: "default"
+  projectIdentifier: "helloworld"
