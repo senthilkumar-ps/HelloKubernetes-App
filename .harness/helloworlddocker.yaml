@@ -1,0 +1,17 @@
+connector:
+  name: helloworld-docker
+  identifier: helloworlddocker
+  description:
+  orgIdentifier: default
+  projectIdentifier: helloworld
+  type: DockerRegistry
+  spec:
+    dockerRegistryUrl: https://hub.docker.com/u/nagisetty1998
+    providerType: DockerHub
+    auth:
+      type: UsernamePassword
+      spec:
+        username: nagisetty1998
+        passwordRef: dockerhubsecret
+    delegateSelectors:
+    - hekkoworld
