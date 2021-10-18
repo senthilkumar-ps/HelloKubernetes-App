@@ -11,7 +11,7 @@ pipeline:
               description: helloworld
               type: CI
               spec:
-                  cloneCodebase: true
+                  cloneCodebase: false
                   execution:
                       steps:
                           - step:
