@@ -27,5 +27,8 @@ pipeline:
                   infrastructure:
                       type: KubernetesDirect
                       spec:
-                          connectorRef: <+input>
+                          connectorRef: harnesscluster
                           namespace: default
+              variables: []
+              when:
+                  pipelineStatus: All
