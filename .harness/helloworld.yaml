@@ -29,7 +29,7 @@ pipeline:
                                 identifier: helloworldregistry
                                 spec:
                                     connectorRef: helloworlddocker
-                                    repo: helloworld
+                                    repo: karthequian/helloworld
                                     tags:
                                         - latest
                                     optimize: true
