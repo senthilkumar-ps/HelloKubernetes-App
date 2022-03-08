@@ -1,0 +1,34 @@
+pipeline:
+    name: helloworld
+    identifier: helloworld
+    projectIdentifier: helloworld
+    orgIdentifier: default
+    tags: {}
+    stages:
+        - stage:
+              name: helloworld
+              identifier: helloworld
+              description: ""
+              type: CI
+              spec:
+                  cloneCodebase: false
+                  execution:
+                      steps:
+                          - step:
+                                type: Run
+                                name: helloworld
+                                identifier: helloworld
+                                spec:
+                                    connectorRef: helloworlddocker
+                                    image: helloworld
+                                    command: "FROM alpine\r\nRUN echo \"hello\""
+                                    privileged: false
+                  serviceDependencies: []
+                  infrastructure:
+                      type: KubernetesDirect
+                      spec:
+                          connectorRef: harnesscluster
+                          namespace: helloworld
+              variables: []
+              when:
+                  pipelineStatus: All
